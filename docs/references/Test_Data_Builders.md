@@ -21,7 +21,9 @@ the fields' values.
 
 ## Examples
 
-Below is an example of a TestBuilder for the Country object from our code:
+### Java Example
+
+Below is an example of a TestBuilder for the Country object from our code in Java:
 
 ```java
     import static com.murex.tbw.domain.country.Currency.US_DOLLAR;
@@ -76,6 +78,55 @@ for France with this code:
     }
 ```
 
+### C++ Example
+
+Below is an example of a TestBuilder for the Novel object from our code in C++:
+
+```C++
+    #include "domain/book/Novel.h"
+    #include "domain/country/CountryTestBuilder.h"
+    
+    using namespace domain::country;
+    
+    namespace domain {
+    namespace book {
+    
+    class NovelTestBuilder
+    {
+       double price; 
+       std::string name = "";
+       domain::country::Language language = domain::country::FRENCH;
+       std::vector<Genre> genres = {};
+       Author author = Author("Victor Hugo", domain::country::France);
+    
+    public:
+       Novel build() const
+       {
+          return Novel(this->name, this->price, this->author, this->language, this->genres);
+       }
+    
+       NovelTestBuilder& withName(const std::string& name)
+       {
+          this->name = name;
+          return *this;
+       }
+    
+       NovelTestBuilder& costing(double price)
+       {
+          this->price = price;
+          return *this;
+       }
+    };
+    
+    inline NovelTestBuilder aNovel()
+    {
+       return {};
+    }
+    
+    }
+    }
+```
+
 ## Best Practices 
 ### Where to place the Test Data Builders?
 There is no definite answer for that. But, as mentioned earlier, the Test Data
@@ -84,6 +135,18 @@ builder next to the class it is building.
 Thus, with Test Data Builders, it would be better for our builders to be in the
 same package/namespace as a real class, but in the test structure.
 to its tests. 
+
+### C++ Best Practices
+1. Use an inline factory method to return a default instance of the TestBuilder
+(example: check the function aNovel() in the code above)
+1. Declare the build method as a 'const member function'. This is achieved by 
+adding the 'const' keyword at the end of the build function. By doing so, you
+are enforcing that the returned object will not be modified. 
+1. The assembling functions of the builder classes should return a reference
+to the current builder object. Therefore, those functions should return the 
+object by reference instead of value.    
+1. The creation function (i.e. build) of the builder classes should return the
+created object by value instead of reference. 
 
 ## Benefits
 
