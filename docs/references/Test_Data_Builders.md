@@ -137,16 +137,20 @@ same package/namespace as a real class, but in the test structure.
 to its tests. 
 
 ### C++ Best Practices
-1. Use an inline factory method to return a default instance of the TestBuilder
-(example: check the function aNovel() in the code above)
-1. Declare the build method as a 'const member function'. This is achieved by 
-adding the 'const' keyword at the end of the build function. By doing so, you
-are enforcing that the returned object will not be modified. 
-1. The assembling functions of the builder classes should return a reference
-to the current builder object. Therefore, those functions should return the 
-object by reference instead of value.    
-1. The creation function (i.e. build) of the builder classes should return the
-created object by value instead of reference. 
+1. **inline factory method**: Use an 'inline factory method' to return a default 
+instance of the TestBuilder (example: check the function aNovel() in the code
+above)
+1. **const build function**: Declare the build method as a 'const member function'.
+This is achieved by adding the 'const' keyword at the end of the build function. 
+By doing so, you are enforcing that the returned object will not be modified.
+1. **return by reference**: The assembling functions of the builder classes should
+return a reference to the current builder object. Therefore, those functions 
+should return the object by reference instead of value.    
+1. **return by value**: Unlike the assembling functions, creation function (i.e.
+build) should return the created object by value instead of reference.
+1. **shared pointer**: use the library std::shared_ptr in your code to help you
+manage the storage of pointers. 
+1. **build_shared<T>**: 
 
 ## Benefits
 
