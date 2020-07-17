@@ -109,9 +109,9 @@ some data issued invoices from previous transactions.
 
 > Tip: The total amount of each invoice is not included in this list. 
 
-The Main class ([Application.java](../src/main/java/Application.java)) initializes
-an instance of ReportGenerator and then calls the methods to get the 3 report
-values: 
+The Main class *Application* [[Java](../src/main/java/Application.java), [C++](../src/main/cpp/bin/Application.cpp)]
+initializes an instance of ReportGenerator and then calls the methods to get the
+3 report values: 
 1. Total number of books sold
 1. Total number of issued invoices
 1. Sum of total amount of all invoices
@@ -198,9 +198,10 @@ in the code and provided us with quick fixes!
 ### 3. Apply Fixes and Then revert
 
 One approach to fix the problem is to: 
-1. Apply the above 2 patches to your code in [Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java) and 
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java) respectively 
-1. Re-run the Main class ([Application.java](../src/main/java/Application.java))
+1. Apply the above 2 patches to your code in *Invoice* [[Java](../src/main/java/com/murex/tbw/purchase/Invoice.java), 
+[C++](../src/main/cpp/lib/Invoice.cpp)] and *ReportGenerator* [[Java](../src/main/java/com/murex/tbw/report/ReportGenerator.java), 
+[C++](../src/main/cpp/lib/ReportGenerator.cpp)] respectively 
+1. Re-run the Main class *Application* [[Java](../src/main/java/Application.java), [C++](../src/main/cpp/bin/Application.cpp)]
 1. Ensure you see the correct values printed
 
 Now that we know what caused the issue, let's try to do the fix correctly.
@@ -210,19 +211,17 @@ So let's revert!
 
 ### 4. Write a test on Invoice and only then fix it
 
-Let's add the test to 
-[Invoice](../src/main/java/com/murex/tbw/purchase/Invoice.java), reproduce the
-issue, and fix the code.
+Let's add the test to *Invoice* [[Java](../src/main/java/com/murex/tbw/purchase/Invoice.java), 
+[C++](../src/main/cpp/lib/Invoice.cpp)], reproduce the issue, and fix the code.
 
 Mocking a legacy code base is not a great idea. The only fake we are allowed is
-the 
-[InMemoryRepository](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java)
+the *InMemoryRepository* 
+[[Java](../src/test/java/com/murex/tbw/storage/InMemoryRepository.java), [C++](../src/test/cpp/InMemoryRepository.cpp)]
 
 ### 5. [BONUS] Write a test on ReportGenerator and only then fix it
 
-If you have the time, do the same for
-[ReportGenerator](../src/main/java/com/murex/tbw/report/ReportGenerator.java):
-add a test, reproduce and fix.
+If you have the time, do the same for *ReportGenerator* [[Java](../src/main/java/com/murex/tbw/report/ReportGenerator.java), 
+[C++](../src/main/cpp/lib/ReportGenerator.cpp)] add a test, reproduce and fix.
 
 ## Mini Retro
 
