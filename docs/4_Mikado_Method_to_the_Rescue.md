@@ -187,7 +187,7 @@ So let's delete the tests!
 
 ### Use Mikado Method to create Test Data Builders to add a test on Invoice
 
-We'll first focus on the test on *Invoice*
+We'll first focus on the test on ***Invoice***
 [[Java](../src/main/java/com/murex/tbw/purchase/Invoice.java), [C++](../src/main/cpp/lib/Invoice.cpp)]. 
 It's simpler and achievable given the time we have.
 
@@ -200,7 +200,7 @@ something useful.
 ### Use Mikado Method to create Test Data Builders to add a test on Report Generator (advanced)
 
 If you have the time, repeat the same exercise with the test on 
-*ReportGenerator* [[Java](../src/main/java/com/murex/tbw/report/ReportGenerator.java), 
+***ReportGenerator*** [[Java](../src/main/java/com/murex/tbw/report/ReportGenerator.java), 
 [C++](../src/main/cpp/lib/ReportGenerator.cpp)]
 
 You should be able to re-use many builders you wrote before.
