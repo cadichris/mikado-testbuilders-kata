@@ -149,7 +149,7 @@ should return the object by reference instead of value.
 1. **return by value**: Unlike the assembling functions, creation function (i.e.
 build) should return the created object by value instead of reference.
 1. **shared pointer**: use the library std::shared_ptr in your code to help you
-manage the storage of pointers. 
+manage the storage of pointers. This could be thought of as a light Garbage Collector.
 1. **build_shared<T>**: 
 
 ## Benefits
