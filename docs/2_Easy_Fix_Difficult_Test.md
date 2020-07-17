@@ -69,7 +69,8 @@ Having this interface enables us to have different implementations for our
 database (Json, InMemory, Relational, NoSql, etc). 
 
 In this workshop, we wrote a JSON implementation for this Repository interface
-([JsonRepository.java](../src/main/java/com/murex/tbw/storage/JsonRepository.java)). 
+***JsonRepository*** [[Java](../src/main/java/com/murex/tbw/storage/JsonRepository.java), 
+[C++](../src/main/cpp/lib/JsonRepository.cpp)]. 
 We assumed that we are storing our data in JSON format in a [file](../src/main/resources/repository.json) 
 under the resources folder.  
 
