@@ -17,7 +17,7 @@ TEST(Invoice, taxes_are_applied_correctly)
    purchase::Invoice invoice(
       "Murex",
       domain::country::Country(
-         "Lebanon",
+         "USA",
          domain::country::Currency::US_DOLLAR, 
          domain::country::Language::ARABIC
       )
