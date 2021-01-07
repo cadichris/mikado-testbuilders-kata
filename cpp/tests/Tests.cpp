@@ -12,7 +12,7 @@
 
 #include <memory>
 
-TEST(Invoice, taxes_are_applied_correctly)
+TEST(Invoice, DISABLED_taxes_are_applied_correctly)
 {
    purchase::Invoice invoice(
       "Murex",
@@ -45,4 +45,19 @@ TEST(Invoice, taxes_are_applied_correctly)
 
    double totalAmount = invoice.computeTotalAmount();
    EXPECT_LT(price, totalAmount);
+}
+
+
+TEST(Invoice, tets_invoice_taxes_with_mikado)
+{
+   domain::country::Country usa("USA", domain::country::Currency::US_DOLLAR, domain::country::ENGLISH);
+   purchase::Invoice invoice("invoice", usa);
+   domain::book::Author jamesBlack("James Black", usa);
+   double bookPrice = 100.;
+   auto theMobilePhoneAndThePen = std::make_shared<domain::book::Novel>("The mobile phone and the pen", 
+                                                                        bookPrice, 
+                                                                        jamesBlack, 
+                                                                        domain::country::Language::ENGLISH, 
+                                                                        std::vector<domain::book::Genre>{domain::book::Genre::MYSTERY});
+
 }
