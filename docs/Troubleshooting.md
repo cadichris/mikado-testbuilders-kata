@@ -1,5 +1,13 @@
 # Troubleshooting
 
+## I am getting C++ compilation errors 
+
+Most probably this is because there is a difference between your and our C++ compiler 
+(version, vendor, etc).  
+
+Check the [CPP Build Manual](../cpp/BUILD_MANUAL.md) to learn more about the
+tools and compiler versions we used in this project
+
 ## I cannot get the googltest dependency in Visual Studio
 
 If you are behind a proxy, you might need to configure your NuGet proxy. Here
